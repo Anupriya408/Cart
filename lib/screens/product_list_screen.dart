@@ -44,7 +44,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
             try {
               price = double.parse(priceString);
             } catch (e) {
-              print('Error parsing price for product $id: $e');
+              print('Error  price for product $id: $e');
             }
 
             loadedProducts.add(Product(
@@ -55,7 +55,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
               imageURL: imageURL,
             ));
           } else {
-            print('Price is null or empty for product $id');
+            print('Price is null or empty for products $id');
           }
         });
 
@@ -74,7 +74,7 @@ class _ProductListScreenState extends State<ProductListScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Makeup Products'),
+        title: Text('Makeup Products Is Here'),
         actions: [
           IconButton(
             icon: Stack(
@@ -114,18 +114,18 @@ class _ProductListScreenState extends State<ProductListScreen> {
                   child: SingleChildScrollView(
                     child: Wrap(
                       spacing: 10.0, 
-                      runSpacing: 10.0, // Vertical spacing between items
+                      runSpacing: 10.0, 
                       children: _products.map((product) {
                         final bool isInWishlist = _wishlistItems.contains(product.id);
                         return Card(
-                          color: Color.fromARGB(251, 234, 190, 213),
-                          elevation: 3, // Elevation of the card
+                          color: Colors.white,
+                          // elevation: 4, 
                           child: Container(
                             width: (MediaQuery.of(context).size.width - 30) / 2, // Adjust the width as needed
                             child: Column(
                               children: [
                                 Container(
-                                  height: 130,
+                                  height: 120,
                                   child: Image.network(
                                     product.imageURL,
                                     fit: BoxFit.cover,

@@ -13,7 +13,6 @@ class LoginScreen extends StatelessWidget {
     final double containerWidth = screenSize.width * 0.4;
 
     return Scaffold(
-      // Your login screen UI code here... backgroundColor: Colors.white,
       body: Center(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
@@ -35,8 +34,13 @@ class LoginScreen extends StatelessWidget {
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(10.0),
                       color: Colors.white,
-                      boxShadow: [
-                        const BoxShadow(),
+                      boxShadow: const [
+                        BoxShadow(
+                          color: Colors.grey,
+                          spreadRadius: 2,
+                          blurRadius: 5,
+                          offset: Offset(0, 3),
+                        ),
                       ],
                     ),
                     child: Column(

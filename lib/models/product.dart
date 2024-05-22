@@ -1,6 +1,10 @@
-
-
 import 'package:flutter/material.dart';
+
+void main() {
+  runApp(MaterialApp(
+    home: ProductListScreen(),
+  ));
+}
 
 class Product {
   final String id;
@@ -24,31 +28,31 @@ class ProductListScreen extends StatelessWidget {
       id: '1',
       name: 'Product 1',
       brand: 'Brand 1',
-      price: 10.99,
-      imageURL: 'https://via.placeholder.com/150',
+      price: 10.11,
+      imageURL: 'https://via.placeholder.com/120',
     ),
     Product(
       id: '2',
       name: 'Product 2',
       brand: 'Brand 2',
-      price: 20.99,
-      imageURL: 'https://via.placeholder.com/150',
+      price: 20.00,
+      imageURL: 'https://via.placeholder.com/120',
     ),
     Product(
       id: '3',
       name: 'Product 3',
       brand: 'Brand 3',
-      price: 30.99,
-      imageURL: 'https://via.placeholder.com/150',
+      price: 40.99,
+      imageURL: 'https://via.placeholder.com/120',
     ),
-    // Add more dummy products as needed
+    
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Makeup Products'),
+        title: Text('Makeup Products....'),
       ),
       body: ListView.builder(
         itemCount: dummyProducts.length,
@@ -68,8 +72,3 @@ class ProductListScreen extends StatelessWidget {
   }
 }
 
-void main() {
-  runApp(MaterialApp(
-    home: ProductListScreen(),
-  ));
-}
