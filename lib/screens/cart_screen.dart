@@ -2,11 +2,13 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:first_project/models/cart.dart';
 import 'package:first_project/models/product.dart';
+import 'package:first_project/providers/themeprovider.dart';
 
 class CartScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final cart = Provider.of<Cart>(context);
+    final themeProvider = Provider.of<ThemeProvider>(context);
 
     return Scaffold(
       appBar: AppBar(
@@ -86,6 +88,19 @@ class CartScreen extends StatelessWidget {
             ),
           ),
         ],
+      ),
+      bottomNavigationBar: BottomAppBar(
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.end,
+          children: [
+            IconButton(
+              icon: Icon(themeProvider.isDarkMode ? Icons.wb_sunny : Icons.nights_stay),
+              onPressed: () {
+                themeProvider.toggleTheme();
+              },
+            ),
+          ],
+        ),
       ),
     );
   }
